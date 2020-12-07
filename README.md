@@ -5,10 +5,10 @@ The out ring is supposed to be 3D printed in a flexible material such that it ca
 ## Files
 **! Be aware that the two centers are NOT identical. The outer bumps are offset between the two.**  
 
-The parts and cut file contains the parts to 3D print and cut.
+The parts and cut file contains the parts to 3D print and cut.  
 <img src="rubber_wheel_parts.png" height="200"/> 
 <img src="rubber_wheel_center_cut.svg" height="200"/>  
 
   
-Use the full file in your modeling so you can see the fit and size.
+Use the full file in your modeling so you can see the fit and size.  
 <img src="rubber_wheel_full.png" height="200"/>  
