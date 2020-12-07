@@ -20,8 +20,9 @@ if (_2d){
 }
 else{
     rubber();
-    translate([0,2*radius*2+20,-thickness])wheel_center("top");
-    translate([0,2*radius+10,0])wheel_center("bottom");
+    wheel_center();
+    *translate([0,2*radius*2+20,-thickness])wheel_center("top");
+    *translate([0,2*radius+10,0])wheel_center("bottom");
 }
 
 
@@ -84,7 +85,6 @@ module gear (r, r2, n, fudge=2){
     _r = r-fudge;
     _r2 = r2+fudge/2;
     _n = n == undef ? round((2*PI*_r)/(2*r2)) : n ; 
-    echo(_n);
 
     difference(){
         offset(fudge)
