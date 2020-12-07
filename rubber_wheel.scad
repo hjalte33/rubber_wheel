@@ -20,9 +20,9 @@ if (_2d){
 }
 else{
     rubber();
-    wheel_center();
-    *translate([0,2*radius*2+20,-thickness])wheel_center("top");
-    *translate([0,2*radius+10,0])wheel_center("bottom");
+    *wheel_center();
+    translate([0,2*radius*2+20,-thickness])wheel_center("top");
+    translate([0,2*radius+10,0])wheel_center("bottom");
 }
 
 
