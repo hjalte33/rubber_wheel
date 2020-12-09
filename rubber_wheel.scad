@@ -1,27 +1,52 @@
 
+/* [Wheel size] */
+// Thickness of you center piece material. The wheel will be double the thickness
 thickness = 10;
+
+// Radius of the center pieces
 radius = 65;
+
+// Thickness of the outer rubber
 rubber_thickness = 2;
 
+/* [Mount size] */
+// Number of holes round the center
 mount_ring_n_holes = 6;
+
+// Radius for the ring of holes
 mount_ring_radius = 23.85;
+
+// Hole diameter for the ring
 mount_hole_dia = 5;
+
+// Hole diameter for the center hole
 mount_center_hole_dia = 6;
+
+// Depth of cut for the keyed center
 key_depth = 0.6;
 
-2d = false;
+/* [Part selector] */
+// Render in 2D
+2D = false;
+
+// Render rubber ring
 select_rubber = true;
+
+// Render top center piece
 select_center_top = true;
+
+// Render bottom center piece
 select_center_bottom = true;
 
+/*  [Quality]  */
 $fa = 1;
 $fs = 0.5;
 
-if (2d){
+if (2D){
     projection(cut = false){
-        assert(!select_center_bottom || !select_center_top, "Both top and bottom selected at the same time, they are now on top of each other. Please select only one at a time");
         if(select_center_top) mounting_holes()wheel_center("top");
         if(select_center_bottom) mounting_holes() wheel_center("bottom");
+        if(select_rubber) color("grey") rubber();
     }
 }
 else{
