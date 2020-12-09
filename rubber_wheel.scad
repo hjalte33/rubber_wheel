@@ -26,23 +26,22 @@ mount_center_hole_dia = 6;
 key_depth = 0.6;
 
 /* [Part selector] */
-// Render in 2D
-2D = false;
+render_2D = 0;//[1:true, 0:false]
 
 // Render rubber ring
-select_rubber = true;
+select_rubber = 1;//[1:true, 0:false]
 
 // Render top center piece
-select_center_top = true;
+select_center_top = 0;//[1:true, 0:false]
 
 // Render bottom center piece
-select_center_bottom = true;
+select_center_bottom = 1;//[1:true, 0:false]
 
-/*  [Quality]  */
+/* [Quality] */
 $fa = 1;
 $fs = 0.5;
 
-if (2D){
+if (render_2D){
     projection(cut = false){
         if(select_center_top) mounting_holes()wheel_center("top");
         if(select_center_bottom) mounting_holes() wheel_center("bottom");
