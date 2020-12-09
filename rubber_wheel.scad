@@ -83,12 +83,12 @@ module rubber(){
     }
 
     // Render the desired outisde traction pattern 
-    render(convexity = 10)difference(){
+    difference(){
         union(){
-            for(i=[0:n-1]){
+            render(convexity = 10)for(i=[0:n-1]){
                 rotate([0,0,360/n*i])translate([radius+rubber_thickness,0,0])
                     translate([-bar_x,-bar_y/2,0])
-                        shape();
+                        render(convexity = 4)shape();
             }
         }
         // trim off everything of the shape that goes outside the wheels outer perimiter. 
@@ -110,7 +110,7 @@ module wheel_center(select = "all"){
     gearOffset = 360/$_n/2;
 
     module gear (){
-        offset(fudge)difference(){
+        render()offset(fudge)difference(){
             circle($_r);
             for (i=[0:$_n]){
                 rotate([0,0,i*360/$_n]) translate([radius,0]) circle($_r2);
